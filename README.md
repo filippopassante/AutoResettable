@@ -1,14 +1,13 @@
 # AutoResettable
-Declares an autoReset() method in the class to which you attach it, which
-ersets all its variables to their declaration-level default value, if any, or
-to nil if they’re optionals.
+Declares an `autoReset()` method in the class to which it is attached, which
+resets all its variables to their declaration-level default value if any,
+otherwise to `nil`, provided they’re optionals.
 
-Keep in mind that macros can't see each other's expansions, so, if you
-use another macro to declare a variable, @AutoResettable will ignore it.
+Macros can't see each other's expansions, so, if a different macro declares
+a variable, `@AutoResettable` will ignore it.
 
-autoReset() may space closures, IIFEs and shorthand array initializations
+`autoReset()` may space closures, IIFEs and shorthand array initializations
 weird, but still correctly resets them.
-
 
 Example usage:
 ```
@@ -31,17 +30,17 @@ class MyClass {
     }
 }
 ```
-You still have to reset b and c because they don't have default values
-at declaration and they are not optionals.
+You still have to reset `b` and `c` because they don't have default values
+at declaration and they're not optionals.
 
-This allows you to assign expressions to your variables in
-initializers to which autoReset() might not have access.
+This allows you to assign, from inside initializers, expressions to your
+variables to which `autoReset()` might not have access.
 
-A great use case is to call autoReset() in the tearDown() method of
-XCTestCase subclasses, since these classes usually don't have
-initializers:
+One use case is to call `autoReset()` in the `tearDown()` of `XCTestCase`
+subclasses:
 ```
 import XCTest
+
 @AutoResettable
 final class Tests: XCTestCase {
     let a = A()
