@@ -6,8 +6,8 @@ otherwise to `nil` provided they’re optionals.
 Macros can't see each other's expansions, so, if a different macro declares
 a variable, `@AutoResettable` will ignore it.
 
-`autoReset()` may space closures, IIFEs and shorthand array initializations
-weird, but still correctly resets them.
+Closures, IIFEs and shorthand array initializations may be indented weirdly
+in `autoReset()`, but they are still correctly reset.
 
 Example usage:
 ```
