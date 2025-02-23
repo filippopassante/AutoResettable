@@ -1,5 +1,5 @@
 # AutoResettable
-Declares an `autoReset()` method in the class to which it is attached, which
+Declares an `autoReset()` method in the class it is attached to, which
 resets all its variables to their declaration-level default value if any,
 otherwise to `nil` provided they’re optionals.
 
