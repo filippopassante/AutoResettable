@@ -1,7 +1,7 @@
 # AutoResettable
 Declares an `autoReset()` method in the class to which it is attached, which
 resets all its variables to their declaration-level default value if any,
-otherwise to `nil`, provided they’re optionals.
+otherwise to `nil` provided they’re optionals.
 
 Macros can't see each other's expansions, so, if a different macro declares
 a variable, `@AutoResettable` will ignore it.
